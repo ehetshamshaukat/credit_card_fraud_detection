@@ -28,7 +28,6 @@ class DataIngestion:
             df_zeros = df[df["Class"] == 0]
             df_zeros = df_zeros.iloc[:492, :]
             balance_df = pd.concat([df_zeros, df_ones]).reset_index()
-            balance_df.drop(columns="index",inplace=True)
 
             # splitting training and testing dataset
             train_dataset, test_dataset = train_test_split(balance_df, test_size=0.2, random_state=69)
